@@ -1,13 +1,15 @@
 {
   "name": "three-app",
+  "description": "一个简单的 Three.js 应用，支持车辆按照运动路径巡航和手动控制车辆行驶",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",
@@ -27,6 +29,7 @@
     "eslint": "^10.9.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.4",
+    "gh-pages": "^6.3.0",
     "globals": "^17.11.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.67.0",

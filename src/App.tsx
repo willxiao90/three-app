@@ -27,7 +27,7 @@ import "./App.css";
 
 function IndustrialPark(props: ThreeElements["mesh"]) {
   const { children, ...rest } = props;
-  const obj = useGLTF("/models/industrial_park/scene.gltf");
+  const obj = useGLTF("./models/industrial_park/scene.gltf");
   // console.log(obj);
   const modelRef = useRef<Mesh>(null!);
 
@@ -50,7 +50,7 @@ function IndustrialPark(props: ThreeElements["mesh"]) {
 
 const Truck = forwardRef<Mesh, ThreeElements["group"]>((props, ref) => {
   const { children, ...rest } = props;
-  const obj = useGLTF("/models/truck/scene.gltf");
+  const obj = useGLTF("./models/truck/scene.gltf");
 
   return (
     <group ref={ref} {...rest}>
@@ -191,7 +191,7 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
 
   return (
     <>
-      <Environment files="/hdr/potsdamer_platz_1k.hdr" />
+      <Environment files="./hdr/potsdamer_platz_1k.hdr" />
 
       <IndustrialPark onClick={(e) => console.log(e.point)} />
       <Truck ref={truckRef} position={[-20, 0, 0]} scale={1} />
