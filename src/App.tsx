@@ -261,7 +261,11 @@ export default function App() {
   return (
     <>
       <Canvas camera={{ position: [-200, 50, 100] }}>
-        <OrbitControls enabled={!isTruckView} />
+        <OrbitControls
+          enabled={!isTruckView}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+        />
         <Perf position="top-left" />
 
         <KeyboardControls map={keyMap}>
