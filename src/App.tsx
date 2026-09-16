@@ -52,16 +52,16 @@ function IndustrialPark(props: ThreeElements["mesh"]) {
 
 const Truck = forwardRef<Mesh, ThreeElements["group"]>((props, ref) => {
   const { children, ...rest } = props;
-  const obj = useGLTF("./models/truck/scene.gltf");
+  const obj = useGLTF("./models/work_truck/scene.gltf");
 
   return (
     <group ref={ref} {...rest}>
-      <primitive object={obj.scene} rotation={[0, -Math.PI / 2, 0]}>
+      <primitive object={obj.scene} rotation={[0, -0.1, 0]} scale={0.05}>
         {children}
       </primitive>
       <PerspectiveCamera
         fov={75}
-        position={[0, 5, -10]}
+        position={[0, 10, -20]}
         rotation={[0, -Math.PI, 0]}
       />
     </group>
