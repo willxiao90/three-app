@@ -4,6 +4,7 @@ import {
   useMemo,
   forwardRef,
   useImperativeHandle,
+  Suspense,
 } from "react";
 import type { RefObject } from "react";
 import * as THREE from "three";
@@ -19,6 +20,7 @@ import {
   useMotion,
   KeyboardControls,
   useKeyboardControls,
+  Loader,
 } from "@react-three/drei";
 import type { KeyboardControlsEntry, MotionPathRef } from "@react-three/drei";
 import { Perf } from "r3f-perf";
@@ -261,12 +263,16 @@ export default function App() {
       <Canvas camera={{ position: [-200, 50, 100] }}>
         <OrbitControls enabled={!isTruckView} />
         <Perf position="top-left" />
+
         <KeyboardControls map={keyMap}>
-          <Sence ref={senceRef} isRemoteMode={isRemoteMode} />
+          <Suspense fallback={null}>
+            <Sence ref={senceRef} isRemoteMode={isRemoteMode} />
+          </Suspense>
         </KeyboardControls>
       </Canvas>
 
       <Leva />
+      <Loader />
     </>
   );
 }
