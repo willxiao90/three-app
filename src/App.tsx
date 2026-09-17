@@ -14,7 +14,6 @@ import type { ThreeElements } from "@react-three/fiber";
 import {
   PerspectiveCamera,
   OrbitControls,
-  Environment,
   useGLTF,
   MotionPathControls,
   useMotion,
@@ -211,7 +210,7 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
           object={truckRef}
           curves={curves}
         >
-          {/* <MotionControl target={truckRef} /> */}
+          <MotionControl target={truckRef} />
         </MotionPathControls>
       )}
     </>
@@ -231,7 +230,7 @@ type Controls = (typeof Controls)[keyof typeof Controls];
 export default function App() {
   const senceRef = useRef<any>(null);
 
-  const { isTruckView, isRemoteMode } = useControls({
+  const { isRemoteMode } = useControls({
     isTruckView: {
       value: false,
       label: "车辆视角",
