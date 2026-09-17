@@ -194,7 +194,6 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
 
   return (
     <>
-      {/* <Environment files="./hdr/potsdamer_platz_1k.hdr" /> */}
       <ambientLight intensity={2} />
       <directionalLight position={[1, 1, 0]} />
 
@@ -212,7 +211,7 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
           object={truckRef}
           curves={curves}
         >
-          <MotionControl target={truckRef} />
+          {/* <MotionControl target={truckRef} /> */}
         </MotionPathControls>
       )}
     </>
@@ -267,7 +266,7 @@ export default function App() {
   return (
     <>
       <Canvas camera={{ position: [-200, 50, 100] }}>
-        {/* <OrbitControls enabled={false} maxPolarAngle={Math.PI / 2} /> */}
+        <OrbitControls enabled={false} maxPolarAngle={Math.PI / 2} />
         <Perf position="top-left" />
 
         <KeyboardControls map={keyMap}>

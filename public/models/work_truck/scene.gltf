@@ -268,25 +268,25 @@
   ],
   "images": [
     {
-      "uri": "textures/RootNode_baseColor.png"
+      "uri": "textures/RootNode_baseColor.webp"
     },
     {
-      "uri": "textures/Material_33_baseColor.png"
+      "uri": "textures/Material_33_baseColor.webp"
     },
     {
-      "uri": "textures/Material_33_metallicRoughness.png"
+      "uri": "textures/Material_33_metallicRoughness.webp"
     },
     {
-      "uri": "textures/Material_33_emissive.png"
+      "uri": "textures/Material_33_emissive.webp"
     },
     {
-      "uri": "textures/Material_33_normal.png"
+      "uri": "textures/Material_33_normal.webp"
     },
     {
-      "uri": "textures/Material_34_baseColor.png"
+      "uri": "textures/Material_34_baseColor.webp"
     },
     {
-      "uri": "textures/Material_34_normal.png"
+      "uri": "textures/Material_34_normal.webp"
     }
   ],
   "materials": [
