@@ -13,7 +13,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import type { ThreeElements } from "@react-three/fiber";
 import {
   PerspectiveCamera,
-  OrbitControls,
+  // OrbitControls,
   useGLTF,
   MotionPathControls,
   useMotion,
