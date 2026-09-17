@@ -21,6 +21,7 @@ import {
   KeyboardControls,
   useKeyboardControls,
   Loader,
+  Sky,
 } from "@react-three/drei";
 import type { KeyboardControlsEntry, MotionPathRef } from "@react-three/drei";
 import { Perf } from "r3f-perf";
@@ -181,9 +182,9 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
         set({
           camera: truckRef.current.children[1] as THREE.PerspectiveCamera,
         });
-        setTimeout(() => {
-          truckRef.current.children[1].rotation.set(0, -Math.PI, 0); // 重置相机旋转角度
-        }, 0);
+        // setTimeout(() => {
+        //   truckRef.current.children[1].rotation.set(0, -Math.PI, 0); // 重置相机旋转角度
+        // }, 0);
       },
       switchToDefaultCamera() {
         set({ camera: cameraRef.current });
@@ -193,7 +194,12 @@ const Sence = forwardRef<any, { isRemoteMode: boolean }>((props, ref) => {
 
   return (
     <>
-      <Environment files="./hdr/potsdamer_platz_1k.hdr" />
+      {/* <Environment files="./hdr/potsdamer_platz_1k.hdr" /> */}
+      <ambientLight intensity={2} />
+      <directionalLight position={[1, 1, 0]} />
+
+      <Sky distance={450000} sunPosition={[1, 1, 0]} />
+      <fog attach="fog" args={["#c9d4d8", 200, 800]} />
 
       <IndustrialPark onClick={(e) => console.log(e.point)} />
       <Truck ref={truckRef} position={[-20, 0, 0]} scale={1} />
@@ -261,11 +267,7 @@ export default function App() {
   return (
     <>
       <Canvas camera={{ position: [-200, 50, 100] }}>
-        <OrbitControls
-          enabled={!isTruckView}
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-        />
+        {/* <OrbitControls enabled={false} maxPolarAngle={Math.PI / 2} /> */}
         <Perf position="top-left" />
 
         <KeyboardControls map={keyMap}>
