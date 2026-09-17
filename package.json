@@ -1,6 +1,5 @@
 {
   "name": "three-app",
-  "description": "一个简单的 Three.js 应用，支持车辆按照运动路径巡航和手动控制车辆行驶",
   "private": true,
   "version": "0.1.0",
   "type": "module",
